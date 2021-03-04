@@ -1,0 +1,19 @@
+<div class="modal-wrapper">
+  <ng-container [ngSwitch]="contentType">
+
+    <ng-container *ngSwitchCase="dialogType.string">
+      <div class="box">
+        <div [innerHTML]="content"></div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="dialogType.template">
+      <ng-container *ngTemplateOutlet="content; context: context"></ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="dialogType.component">
+      <ng-container *ngComponentOutlet="content"></ng-container>
+    </ng-container>
+
+  </ng-container>
+</div>
